@@ -14,7 +14,7 @@ class Parks
     array_of_parks.each do |hash|
       countries << hash[:country]
     end
-    array_of_countries = countries.uniq.sort
+    array_of_countries = countries.uniq
 
       @list = {}
     array_of_countries.each do |country|
