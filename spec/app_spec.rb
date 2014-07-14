@@ -57,7 +57,8 @@ describe 'Dog Hash' do
       ]
       park = Parks.new
       list = park.index_by_country(array_of_parks)
-      expect(list["Canada"][0][:id]).to eq(2)
+      expect(list["Canada"].size).to eq(1)
+      expect(list["United States"].size).to eq(2)
     end
   end
 end

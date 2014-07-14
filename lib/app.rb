@@ -18,44 +18,13 @@ class Parks
 
       @list = {}
     array_of_countries.each do |country|
-      #cycle through the array of parks
-      #if the selected parks country = "country"
-        #add it to the countries grouping
-      #else
-        #skip it.do
+      country_parks = []
+      array_of_parks.each do |hash|
+        country_parks << hash if hash[:country] == country
 
+      end
+      @list[country] = country_parks
     end
+    @list
   end
 end
-
-
-=begin
-
-{
-  "Canada" => [
-    {
-      :id=>2,
-      :name=>"Calaway Park",
-      :city=>"Calgary",
-      :state=>"Alberta",
-      :country=>"Canada"
-    }
-  ],
-  "United States" => [
-    {
-      :id=>546,
-      :name=>"Kalahari Resorts",
-      :city=>"Wisconsin Dells",
-      :state=>"Wisconsin",
-      :country=>"United States"
-    },
-    {
-      :id=>547,
-      :name=>"Little Amerricka",
-      :city=>"Marshall",
-      :state=>"Wisconsin",
-      :country=>"United States"
-    }
-  ]
-}
-=end
