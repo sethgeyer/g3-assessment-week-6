@@ -18,11 +18,12 @@ class Parks
 
       @list = {}
     array_of_countries.each do |country|
-      country_parks = []
-      array_of_parks.each do |hash|
-        country_parks << hash if hash[:country] == country
+      # country_parks = []
+      # array_of_parks.each do |hash|
+      #   country_parks << hash if hash[:country] == country
+      # end
 
-      end
+      country_parks = array_of_parks.select { |park| park[:country] == country }
       @list[country] = country_parks
     end
     @list
