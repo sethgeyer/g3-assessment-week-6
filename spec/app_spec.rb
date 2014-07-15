@@ -2,8 +2,12 @@ require 'rspec'
 require 'rspec/autorun'
 
 
-describe 'Dog Hash' do
+describe Parks do
+
+
   describe "#index_by_id" do
+
+
     it "returns a hash of hashes" do
       array_of_parks = [
         {
@@ -21,8 +25,10 @@ describe 'Dog Hash' do
           :country=>"United States"
         }
       ]
-      park = Parks.new
-      list = park.index_by_id(array_of_parks)
+      park = Parks.new(array_of_parks)
+
+      # park = Parks.new
+      list = park.index_by_id
       expect(list[546][:id]).to eq(546)
       expect(list[547]).to eq(array_of_parks[1])
     end
@@ -55,8 +61,8 @@ describe 'Dog Hash' do
           :country=>"Canada"
         }
       ]
-      park = Parks.new
-      list = park.index_by_country(array_of_parks)
+      park = Parks.new(array_of_parks)
+      list = park.index_by_country
       expect(list["Canada"].size).to eq(1)
       expect(list["United States"].size).to eq(2)
     end
